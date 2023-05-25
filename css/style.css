@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 @keyframes rotate {
@@ -12,27 +12,46 @@ body {
     }
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0)
+    }
+}
+
 h1.main_header {
-    width: 500px;
+    /* width: 500px;
     display: block;
     transform: rotate(180deg);
-    transition: transform .3s;
-    animation: rotate 1s forwards;
+    transition: transform .3s; */
+    /* animation: slideIn 3s ease-out forwards; */
+    /* transform-origin: bottom center; */
 }
 
 h1.main_header:hover {
     /* transform: rotate(360deg); */
-    translate:calc(50%);
+    translate:calc(10%);
     transition: 1s;
+}
+
+div.parent {
+    position: relative;
 }
 
 a.link {
     color: black;
     text-decoration: none;
-    padding: 4px 8px;
+    padding: 2px 8px 4px;
     border-radius: 5px;
-    transition: all .3s;
+    transition: transform .3s;
     display: inline-block;
+    position: fixed;
+    left: 10px;
+    top: 30px;
+    background: black;
+    color: white;
 }
 
 a.link:hover {
